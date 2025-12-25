@@ -6,7 +6,6 @@ env/
 *.pth
 *.pt
 models/faiss.index
-data/
 training/data/
 data/
 *.tar.gz
