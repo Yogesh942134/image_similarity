@@ -14,3 +14,4 @@ async def search_image(file: UploadFile = File(...)):
 
     images, dist = find_similar(path, k=5)
     return {"images": images, "distances": dist.tolist()}
+
