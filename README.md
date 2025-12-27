@@ -1,30 +1,41 @@
-image_similarity/
-│
-├── api/
-│   └── main.py                    # FastAPI backend for similarity search
-│
-├── inference/
-│   ├── build_index_mydata.py      # Builds FAISS vector database from your dataset
-│   └── search.py                  # Real-time similarity search engine
-│
-├── models/
-│   ├── embedding_model.py         # EfficientNet Triplet embedding model
-│   ├── embedding.pth              # Trained embedding model
-│   ├── faiss.index                # FAISS similarity index
-│   └── image_paths.npy            # Image path mapping for search results
-│
-├── training/
-│   ├── data/                      # Training images
-│   ├── models/                    # Training checkpoints
-│   ├── train.py                   # Model training pipeline
-│   ├── triplet_mydata.py          # Triplet image generator
-│   └── loss.py                    # Triplet loss function
-│
-├── temp/                          # Temporary query image storage
-│
-├── ui/
-│   └── app.py                     # Streamlit user interface
-│
-├── requirements.txt
-└── README.md
+
+## Detailed Directory Overview
+
+### Backend API (`api/`)
+| File | Description |
+|------|-------------|
+| `main.py` | FastAPI server providing RESTful endpoints for image similarity search |
+
+###  Inference Engine (`inference/`)
+| File | Description |
+|------|-------------|
+| `build_index_mydata.py` | Builds FAISS index from image embeddings |
+| `search.py` | Real-time similarity search against the vector database |
+
+###  Models (`models/`)
+| File | Description |
+|------|-------------|
+| `embedding_model.py` | Custom EfficientNet architecture with triplet embedding |
+| `embedding.pth` | Pre-trained model weights |
+| `faiss.index` | FAISS vector index for fast similarity search |
+| `image_paths.npy` | Mapping between vectors and original image paths |
+
+### Training Pipeline (`training/`)
+| File | Description |
+|------|-------------|
+| `train.py` | Main training script with monitoring |
+| `triplet_mydata.py` | Triplet data loader and augmentation |
+| `loss.py` | Custom triplet loss implementation |
+| `data/` | Training dataset organized by classes |
+| `models/` | Training checkpoints and saved models |
+
+###  Frontend UI (`ui/`)
+| File | Description |
+|------|-------------|
+| `app.py` | Streamlit web interface with image upload and visualization |
+
+###  Utilities
+| Directory | Description |
+|-----------|-------------|
+| `temp/` | Temporary storage for uploaded query images |
 
